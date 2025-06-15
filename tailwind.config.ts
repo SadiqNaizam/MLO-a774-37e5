@@ -64,9 +64,17 @@ export default {
 				}
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: 'var(--radius)', /* Will now be 0.25rem */
+				md: 'calc(var(--radius) - 2px)', /* Will now be calc(0.25rem - 2px) */
+				sm: 'calc(var(--radius) - 4px)'  /* Will now be calc(0.25rem - 4px) */
+			},
+			fontFamily: {
+        // The font stack is applied globally in index.css via `body { font-family: var(--font-sans); }`
+        // If you need to use Tailwind's `font-sans` utility class explicitly elsewhere
+        // and want it to resolve to the "Roboto" stack, you can define it here.
+        // However, applying it to `body` usually suffices.
+        // For explicit utility class usage:
+        sans: 'var(--font-sans)',
 			},
 			keyframes: {
 				'accordion-down': {
